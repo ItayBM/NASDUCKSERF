@@ -1,2 +1,3 @@
-# NASDUCKSERF
- Bounds for NASDUCK SERF
+In this folder are individual bounds corresponding to the NASDUCK SERF detector. The bound was divided into several pickle folders so that it can be uploaded to a GitHub repository, but to get the full bound, one needs to use the data of all files.
+
+In each file, one can find a span of 95% CL bounds on a span of masses, specified (in Hz), by the file name. Each file is a single dictionary, saved using the python3 pickle library, and should be loaded with pickle as well. The keys of each dictionary are (i)'mass' for the vector of masses in this file (in Hz units, to change to eV, divide by h), (ii) 'bounds', for the bounds on gaPP or gaNN in units of GeV^{-1}, and (iii), 'logll' for -2*log(LL(gaPP=gaNN=0)/LL(best fit)). Note that due to the numerical method of computing the 'logll', it is entirely possible for the best fit point to be 0, and receive 'logll' which is e.g. 10^(-5). If the 'logll' is small enough, it usually implies that the null hypothesis is preferred. The bounds on protons are in the protons folder, the bounds on neutrons are in the neutrons folder.
